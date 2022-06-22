@@ -1,0 +1,49 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.banner {
+    background: url(/image/super-pig-cartoon-character_11460-7269.jpg);
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-position: center;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    min-height: 40vh;
+    font-family: 'Potta One', cursive;
+    font-size: 2rem;
+}
+
+.formWrapper {
+    margin-top: 3rem;
+    display: flex;
+    justify-content: space-evenly;
+    font-family: 'Roboto', sans-serif;
+    font-size: 2rem;
+    font-style: italic;
+}
+
+form {
+    margin: 10px;
+}
+
+input {
+    padding: 12px;
+    width: 250px;
+    height: 50px;
+    border: 1px lightgray solid;
+    border-radius: 10px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+button {
+    border: none;
+    padding: 12px;
+    border: 2px solid black;
+    border-radius: 10px;
+    width: 100px;
+}
