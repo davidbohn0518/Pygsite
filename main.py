@@ -1,4 +1,6 @@
 from flask import Flask, jsonify, request
+from scripts import pypyg
+g
 
 app = Flask(__name__)
 
@@ -15,3 +17,7 @@ def convert_from():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
+string = "hello"
+
+pypyg.pygify(string)
