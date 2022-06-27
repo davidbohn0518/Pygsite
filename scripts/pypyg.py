@@ -29,21 +29,56 @@ def pygify(string: str):
 
         else:
             if word[:3].casefold() in CLUSTER:
-                word = word[3:] + word[:3] + CSUFFIX
+                word = word[3:] + f3letters + CSUFFIX
             elif word[:2].casefold() in CLUSTER:
-                word = word[2:] + word[0:2] + CSUFFIX
+                word = word[2:] + f2Letters + CSUFFIX
             elif fLetter.casefold() in VOWELS:
                 word = word[1:] + fLetter + VSUFFIX
             else:
                 word = word[1:] + fLetter + CSUFFIX
 
         rstring += word + " "
-    print(rstring)
+
     return rstring
 
 
-def depygify():
-    pass
+def depygify(string: str):
+    rstring = ""
+    for word in string.split(' '):
+        word.strip(SPECIAL_CHARS)
+        fLetter = word[0]
+        l3Letters = word[-3:]
+        if fLetter.isupper():
+            if l3Letters == VSUFFIX:
+                word = word[0:len(word[:-3])]
+                word = word[-1:] + word[:len(word) - 1]
+            else:
+                word = word[0:len(word[:-2])]
+                if word[-3:] in CLUSTER:
+                    word = word[-3:] + word[:len(word) - 3]
+                elif word[-2:] in CLUSTER:
+                    word = word[-2:] + word[:len(word) - 2]
+                else:
+                    word = word[-1:] + word[:len(word) - 1]
+
+            word = word.capitalize()
+        else:
+            if l3Letters == VSUFFIX:
+                word = word[0:len(word[:-3])]
+                word = word[-1:] + word[:len(word) - 1]
+            else:
+                word = word[0:len(word[:-2])]
+                if word[-3:] in CLUSTER:
+                    word = word[-3:] + word[:len(word) - 3]
+                elif word[-2:] in CLUSTER:
+                    word = word[-2:] + word[:len(word) - 2]
+                else:
+                    word = word[-1:] + word[:len(word) - 1]
+        rstring += word + " "
+
+    return rstring
 
 
-pygify("Small big Olive spring Schedule")
+print(pygify("Small big Olive spring Schedule"))
+
+print(depygify("Allsmay igbay Liveoyay ingspray Eduleschay"))
