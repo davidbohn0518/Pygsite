@@ -77,8 +77,3 @@ def depygify(string: str):
         rstring += word + " "
 
     return rstring
-
-
-print(pygify("Small big Olive spring Schedule"))
-
-print(depygify("Allsmay igbay Liveoyay ingspray Eduleschay"))
